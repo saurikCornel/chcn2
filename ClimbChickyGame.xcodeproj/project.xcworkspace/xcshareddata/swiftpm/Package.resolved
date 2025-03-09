@@ -1,0 +1,15 @@
+{
+  "originHash" : "2b0fe9ae0b2232b1789d2428028cab8369f59fe5847f71cc1a35e2e237ed51c8",
+  "pins" : [
+    {
+      "identity" : "gcdwebserver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CaperWhite/GCDWebServer.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "14f9eedb296c5b71fec971d8256ef3bfc20a2245"
+      }
+    }
+  ],
+  "version" : 3
+}
