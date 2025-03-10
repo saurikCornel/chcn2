@@ -6,14 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		FAEF344F2D7AACBF0084DC82 /* GCDWebServers in Frameworks */ = {isa = PBXBuildFile; productRef = FAEF344E2D7AACBF0084DC82 /* GCDWebServers */; };
-		FAEF34602D7AAD710084DC82 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = FAEF345C2D7AAD710084DC82 /* icons */; };
-		FAEF34612D7AAD710084DC82 /* media in Resources */ = {isa = PBXBuildFile; fileRef = FAEF345D2D7AAD710084DC82 /* media */; };
-		FAEF34622D7AAD710084DC82 /* images in Resources */ = {isa = PBXBuildFile; fileRef = FAEF345E2D7AAD710084DC82 /* images */; };
-		FAEF34632D7AAD710084DC82 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = FAEF345F2D7AAD710084DC82 /* scripts */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		FAEF34312D7AACAF0084DC82 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -35,10 +27,6 @@
 		FAEF34202D7AACAD0084DC82 /* ClimbChickyGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimbChickyGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEF34302D7AACAF0084DC82 /* ClimbChickyGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimbChickyGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEF343A2D7AACAF0084DC82 /* ClimbChickyGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimbChickyGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAEF345C2D7AAD710084DC82 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icons; sourceTree = "<group>"; };
-		FAEF345D2D7AAD710084DC82 /* media */ = {isa = PBXFileReference; lastKnownFileType = folder; path = media; sourceTree = "<group>"; };
-		FAEF345E2D7AAD710084DC82 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
-		FAEF345F2D7AAD710084DC82 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -77,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEF344F2D7AACBF0084DC82 /* GCDWebServers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,10 +88,6 @@
 		FAEF34172D7AACAD0084DC82 = {
 			isa = PBXGroup;
 			children = (
-				FAEF345C2D7AAD710084DC82 /* icons */,
-				FAEF345E2D7AAD710084DC82 /* images */,
-				FAEF345D2D7AAD710084DC82 /* media */,
-				FAEF345F2D7AAD710084DC82 /* scripts */,
 				FAEF34222D7AACAD0084DC82 /* ClimbChickyGame */,
 				FAEF34332D7AACAF0084DC82 /* ClimbChickyGameTests */,
 				FAEF343D2D7AACAF0084DC82 /* ClimbChickyGameUITests */,
@@ -142,7 +125,6 @@
 			);
 			name = ClimbChickyGame;
 			packageProductDependencies = (
-				FAEF344E2D7AACBF0084DC82 /* GCDWebServers */,
 			);
 			productName = ClimbChickyGame;
 			productReference = FAEF34202D7AACAD0084DC82 /* ClimbChickyGame.app */;
@@ -227,7 +209,6 @@
 			mainGroup = FAEF34172D7AACAD0084DC82;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				FAEF344D2D7AACBF0084DC82 /* XCRemoteSwiftPackageReference "GCDWebServer" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FAEF34212D7AACAD0084DC82 /* Products */;
@@ -246,10 +227,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEF34602D7AAD710084DC82 /* icons in Resources */,
-				FAEF34612D7AAD710084DC82 /* media in Resources */,
-				FAEF34622D7AAD710084DC82 /* images in Resources */,
-				FAEF34632D7AAD710084DC82 /* scripts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,25 +587,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		FAEF344D2D7AACBF0084DC82 /* XCRemoteSwiftPackageReference "GCDWebServer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CaperWhite/GCDWebServer.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		FAEF344E2D7AACBF0084DC82 /* GCDWebServers */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAEF344D2D7AACBF0084DC82 /* XCRemoteSwiftPackageReference "GCDWebServer" */;
-			productName = GCDWebServers;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FAEF34182D7AACAD0084DC82 /* Project object */;
 }

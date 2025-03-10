@@ -4,7 +4,6 @@
 
 import SwiftUI
 import WebKit
-import GCDWebServers
 import StoreKit
 
 // Представление WKWebView для SwiftUI
@@ -22,13 +21,13 @@ struct WebView: UIViewRepresentable {
 }
 
 struct ContentView: View {
-    @StateObject private var serverManager = ServerManager()
+  
     @State private var showRankingSheet = false
     
     var body: some View {
         GeometryReader { geo in
             VStack {
-                if let url = serverManager.serverURL {
+                if let url = URL(string: "https://climbandchicky.top/play") {
                     ZStack {
                         WebView(url: url)
                             .clipped()
@@ -55,9 +54,7 @@ struct ContentView: View {
             .frame(width: geo.size.width, height: geo.size.height)
             .background(Color(hex: "232654").ignoresSafeArea())
         }
-        .onAppear {
-            serverManager.startServer()
-        }
+        
         .sheet(isPresented: $showRankingSheet) {
             RankingView()
         }
@@ -152,48 +149,7 @@ struct RankingView: View {
     }
 }
 
-// Управление сервером
-class ServerManager: ObservableObject {
-    @Published var serverURL: URL?
-   
-    static let server = GCDWebServer()
-    func startServer() {
-        guard let resourcePath = Bundle.main.resourcePath else {
-            print("Не удалось найти ресурсы")
-            return
-        }
-        
-        let imagesPath = resourcePath + "/images"
-        print("Serving images from: \(imagesPath)")
-        
-        // Проверка содержимого папки "images"
-        let fileManager = FileManager.default
-        if let contents = try? fileManager.contentsOfDirectory(atPath: imagesPath) {
-            print("Файлы в /images: \(contents)")
-        } else {
-            print("Папка /images пуста или отсутствует")
-        }
-        
-        ServerManager.server.addGETHandler(
-            forBasePath: "/",
-            directoryPath: resourcePath,
-            indexFilename: "index.html",
-            cacheAge: 3600,
-            allowRangeRequests: true
-        )
-        
-        do {
-            try ServerManager.server.start(options: [
-                GCDWebServerOption_Port: 3536,
-                GCDWebServerOption_BindToLocalhost: true
-            ])
-            serverURL = URL(string: "http://localhost:3536")!
-            print("Сервер запущен на \(serverURL?.absoluteString ?? "неизвестный URL")")
-        } catch {
-            print("Ошибка запуска сервера: \(error)")
-        }
-    }
-}
+
 
 #Preview {
     ContentView()
