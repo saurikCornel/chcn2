@@ -8,9 +8,14 @@
 import Foundation
 
 enum AvailableScreens {
-    case GAME
+    case CLIMBGAME
+    case RUNCHICKYGAME
+    case COCOPUZZLEGAME
+    
+    
     case LOADING
     case PLEASURE
+    case MENU
     
 }
 

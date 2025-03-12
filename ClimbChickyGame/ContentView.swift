@@ -32,32 +32,42 @@ struct ContentView: View {
                         WebView(url: url)
                             .clipped()
                         
-                        VStack {
-                            HStack {
-                                Spacer()
-                                Button {
-                                    showRankingSheet = true
-                                } label: {
-                                    Image(.plusBtn)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height: 30)
-                                }
-                                .padding()
-                                Spacer()
-                            }
-                            Spacer()
-                        }
+//                        VStack {
+//                            HStack {
+//                                Spacer()
+//                                Button {
+//                                    showRankingSheet = true
+//                                } label: {
+//                                    Image(.plusBtn)
+//                                        .resizable()
+//                                        .scaledToFit()
+//                                        .frame(height: 30)
+//                                }
+//                                .padding()
+//                                Spacer()
+//                            }
+//                            Spacer()
+//                        }
                     }
                 }
             }
             .frame(width: geo.size.width, height: geo.size.height)
             .background(Color(hex: "232654").ignoresSafeArea())
+            .overlay(
+                ZStack {
+                    Image(.back)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50)
+                        .position(x: geo.size.width / 15, y: geo.size.height / 40)
+                        .onTapGesture {
+                            NavGuard.shared.currentScreen = .MENU
+                        }
+                }
+            )
         }
         
-        .sheet(isPresented: $showRankingSheet) {
-            RankingView()
-        }
+       
     }
 }
 
@@ -97,7 +107,7 @@ struct RankingView: View {
                         .padding(.trailing, 10)
                     }
                     
-                    Text("Top Coders Score")
+                    Text("Our coders")
                         .foregroundColor(.white)
                         .font(.custom("Marker Felt", size: 36))
                         .fontWeight(.bold)
@@ -109,14 +119,15 @@ struct RankingView: View {
                         VStack(spacing: 12) {
                             ForEach(developers, id: \.0) { (name, score) in
                                 HStack {
+                                    Spacer()
                                     Text(name)
                                         .foregroundColor(.white)
                                         .font(.custom("Marker Felt", size: 20))
                                         .lineLimit(1)
                                     Spacer()
-                                    Text("\(score)")
-                                        .foregroundColor(.white)
-                                        .font(.custom("Marker Felt", size: 20))
+//                                    Text("\(score)")
+//                                        .foregroundColor(.white)
+//                                        .font(.custom("Marker Felt", size: 20))
                                 }
                                 .padding(.horizontal, 20)
                             }

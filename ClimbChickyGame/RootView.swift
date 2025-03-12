@@ -14,8 +14,11 @@ struct RootView: View {
     @ObservedObject var nav: NavGuard = NavGuard.shared
     var body: some View {
         switch nav.currentScreen {
+            
+        case .MENU:
+            MenuScreen()
                                         
-        case .GAME:
+        case .CLIMBGAME:
             ContentView()
             
         case .LOADING:
@@ -35,6 +38,10 @@ struct RootView: View {
             } else {
                 Text("Invalid URL")
             }
+        case .RUNCHICKYGAME:
+            RunChickyScreen()
+        case .COCOPUZZLEGAME:
+            CoocooPuzzleGame()
         }
 
     }

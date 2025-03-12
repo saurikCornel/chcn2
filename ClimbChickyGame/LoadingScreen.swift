@@ -29,7 +29,7 @@ struct LoadingScreen: View {
                         withAnimation {
                             isNeeded = true
                             isActive = true
-                            NavGuard.shared.currentScreen = .GAME
+                            NavGuard.shared.currentScreen = .MENU
                             print("Set to MENU, isNeeded: \(isNeeded), isActive: \(isActive)")
                         }
                     } else {
